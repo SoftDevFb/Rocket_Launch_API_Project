@@ -3,3 +3,11 @@
     Date:       11/09/2018
     Purpose:    Rocket Launch Project
 */
+
+.genHeader{
+    background-color: antiquewhite;
+    width: 80%;
+    height: 200px;
+    align-self: auto;
+    border-radius: 10px;
+}
