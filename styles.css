@@ -7,7 +7,6 @@
 body{
 margin-right: 10%;
 margin-left: 10%;
-
 }
 
 .genHeader{
@@ -16,6 +15,7 @@ margin-left: 10%;
     height: 200px;
     align-self: auto;
     border-radius: 10px;
+    margin-bottom: 30px;
 }
 
 .button{
@@ -24,4 +24,8 @@ margin-left: 10%;
     padding: 10px;
     background-color: dodgerblue;
     color: white;
+}
+
+h1{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
