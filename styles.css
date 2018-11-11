@@ -11,3 +11,11 @@
     align-self: auto;
     border-radius: 10px;
 }
+
+.button{
+    border:none;
+    border-radius: 6px;
+    padding: 10px;
+    background-color: dodgerblue;
+    color: white;
+}
