@@ -18,7 +18,7 @@ body {
     margin-bottom: 30px;
 }
 
-.button {
+button {
     border: none;
     border-radius: 6px;
     padding: 10px;
@@ -36,4 +36,14 @@ body {
 
 h1 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+section{
+    border: 1px solid blue;
+    border-radius: 5px;
+}
+
+#timerRow{
+    background-color: antiquewhite;
+    margin-bottom: 10px;
 }
