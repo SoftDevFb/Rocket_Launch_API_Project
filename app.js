@@ -15,6 +15,8 @@ var btn4 = document.getElementById("launcherOneBtn");
 
 //Get next 5 launches function linking to correct button
 btn1.addEventListener("click", function () {
+    launchInfoRow.innerHTML = "";
+    bannerLaunch.innerHTML = "";
     var ourRequest = new XMLHttpRequest();
     ourRequest.open("get", "https://launchlibrary.net/1.4/launch?next=5?");
     ourRequest.onload = function () {
@@ -26,6 +28,8 @@ btn1.addEventListener("click", function () {
 
 //Get next 5 falcon launches function linking to correct button
 btn2.addEventListener("click", function () {
+    launchInfoRow.innerHTML = "";
+    bannerLaunch.innerHTML = "";
     var ourRequest = new XMLHttpRequest();
     ourRequest.open("get", "https://launchlibrary.net/1.4/launch?next=5?&name=falcon");
     ourRequest.onload = function () {
@@ -37,6 +41,8 @@ btn2.addEventListener("click", function () {
 
 //Get next 5 ariane launches function linking to correct button
 btn3.addEventListener("click", function () {
+    launchInfoRow.innerHTML = "";
+    bannerLaunch.innerHTML = "";
     var ourRequest = new XMLHttpRequest();
     ourRequest.open("get", "https://launchlibrary.net/1.4/launch?next=5?&name=ariane");
     ourRequest.onload = function () {
@@ -48,6 +54,8 @@ btn3.addEventListener("click", function () {
 
 //Get next 5 launcherone launches function linking to correct button
 btn4.addEventListener("click", function () {
+    launchInfoRow.innerHTML = "";
+    bannerLaunch.innerHTML = "";
     var ourRequest = new XMLHttpRequest();
     ourRequest.open("get", "https://launchlibrary.net/1.4/launch?next=5?&name=launcherone");
     ourRequest.onload = function () {
@@ -67,7 +75,7 @@ function renderHTML(data) {
     } //end of for
 
     launchInfoRow.insertAdjacentHTML('beforeend', htmlString);
-    
+
     //Places "Next Launch:"" under Page Header
     bannerLaunch.insertAdjacentHTML('beforeend', "<p>" + "Next Launch: " + 
     data.launches[0].net + data.launches[0].name + "</p>");  
