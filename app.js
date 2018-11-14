@@ -77,6 +77,19 @@ function renderHTML(data) {
     launchInfoRow.insertAdjacentHTML('beforeend', htmlString);
 
     //Places "Next Launch:"" under Page Header
-    bannerLaunch.insertAdjacentHTML('beforeend', "<p>" + "Next Launch: " + 
-    data.launches[0].net + data.launches[0].name + "</p>");  
+    bannerLaunch.insertAdjacentHTML('beforeend', "<p>" + "Next Launch: " +
+        data.launches[0].net + data.launches[0].name + "</p>");
 }
+
+
+var x = setInterval(function () {
+    var countDownDate = new Date(rocketObj.launches[0].net).getTime();
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    F1.innerHTML = `<b>Countdown to Launch: </b> ${days} Days: ${hours} Hours: ${minutes} Min: ${seconds} Seconds:`
+
+}, 1000);
