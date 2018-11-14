@@ -83,7 +83,7 @@ function renderHTML(data) {
 
 
 var x = setInterval(function () {
-    var countDownDate = new Date(rocketObj.launches[0].net).getTime();
+    var countDownDate = new Date(data.launches[0].net).getTime();
     var now = new Date().getTime();
     var distance = countDownDate - now;
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
