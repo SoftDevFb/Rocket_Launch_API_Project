@@ -12,6 +12,7 @@ var btn1 = document.getElementById("allBtn");
 var btn2 = document.getElementById("falconBtn");
 var btn3 = document.getElementById("arianeBtn");
 var btn4 = document.getElementById("launcherOneBtn");
+var x;
 
 //Get next 5 launches function linking to correct button
 btn1.addEventListener("click", function() {
@@ -70,6 +71,7 @@ btn4.addEventListener("click", function() {
   ourRequest.send();
 });
 
+
 //Send our data to the html page
 function renderHTML(data) {
   var htmlString = "";
@@ -81,15 +83,12 @@ function renderHTML(data) {
   launchInfoRow.insertAdjacentHTML("beforeend", htmlString);
 
   //Countdown Timer
-  bannerLaunch.insertAdjacentHTML(
-    "beforeend",
-    "<p>" +
-      "Next Launch: " +
-      data.launches[0].net +
-      data.launches[0].name +
-      "</p>"
-  );
-  var x = setInterval(function() {
+  bannerLaunch.insertAdjacentHTML("beforeend", 
+  "<p>" + "Next Launch: " + data.launches[0].net + data.launches[0].name + "</p>");
+  
+  //Countdown Timer
+    clearInterval(x);
+    x = setInterval(function() {
     var countDownDate = new Date(data.launches[0].net).getTime();
     var now = new Date().getTime();
     var distance = countDownDate - now;
@@ -102,7 +101,8 @@ function renderHTML(data) {
     document.getElementById(
       "timerRow"
     ).innerHTML = `<b>Countdown to Launch: </b> ${days} Days: ${hours} Hours: ${minutes} Min: ${seconds} Seconds:`;
+
+    //clearInterval(x);
   }, 1000);
 }
 
-//Need to clearInterval() somewhere to avoid looping.
