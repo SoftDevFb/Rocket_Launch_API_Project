@@ -41,7 +41,7 @@ btn2.addEventListener("click", function() {
 });
 
 //Get next 5 ariane launches function linking to correct button
-btn3.addEventListener("click",  function() {
+btn3.addEventListener("click", function() {
   launchInfoRow.innerHTML = "";
   bannerLaunch.innerHTML = "";
   ourRequest.open(
@@ -68,7 +68,7 @@ btn4.addEventListener("click", function() {
     renderHTML(launcherOneData);
   };
   ourRequest.send();
-}); 
+});
 
 //Send our data to the html page
 function renderHTML(data) {
@@ -104,3 +104,5 @@ function renderHTML(data) {
     ).innerHTML = `<b>Countdown to Launch: </b> ${days} Days: ${hours} Hours: ${minutes} Min: ${seconds} Seconds:`;
   }, 1000);
 }
+
+//Need to clearInterval() somewhere to avoid looping.
